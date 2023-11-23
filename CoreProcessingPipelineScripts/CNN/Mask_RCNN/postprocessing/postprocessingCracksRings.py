@@ -954,10 +954,18 @@ def main():
             print("Compulsory argument --run_ID is missing. Specify the Run ID")
             exit()
 
+        print("os.path")
+        print(os.path)
+        print(args.output_folder)
+
         path_out = os.path.join(args.output_folder, args.run_ID)
+
+        print("path_out:", path_out)
+
+
         # Check if output dir for run_ID exists and if not create it
         if not os.path.isdir(path_out):
-            os.mkdir(path_out)
+            os.makedirs(path_out)
 
         now = datetime.now()
         dt_string_name = now.strftime("D%Y%m%d_%H%M%S") #"%Y-%m-%d_%H:%M:%S"
@@ -966,6 +974,8 @@ def main():
         log_file_name = str(args.logfile) + run_ID + '_' + dt_string_name + '.log' #"RunID" + dt_string +
         log_file_path =os.path.join(path_out, log_file_name)
 
+        print("log_file_path")
+        print(log_file_name)
         # Initiate log file
         with open(log_file_path,"x") as fi:
             print("Run started:" + dt_string, file=fi)

@@ -68,3 +68,11 @@ Saves images with detected masks and distances in “pngs” subfolder within ou
 --weightRing
 ```
 Retrained weights in a form of .h5 file can be passed using this argument.
+
+
+
+sudo docker run new4 --dpi=4800 --run_ID=0 --input=/home/user/Downloads/dendro/img --output_folder=/home/user/Downloads/dendro/out
+
+sudo docker run -ti --entrypoint=sh sasi/tt
+
+python postprocessingCracksRings.py --dpi=4800 --run_ID=4 --input=/home/mambauser/in --output_folder=/home/mambauser/out --weightRing=/home/mambauser/mask_rcnn_treeringcrackscomb2_onlyring_0186.h5  --print_detections=yes
